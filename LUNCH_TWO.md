@@ -15,7 +15,7 @@
     -  https://stackoverflow.com/questions/27991366/what-is-the-difference-between-state-and-props-in-react
 - [Extending React Component](https://reactjs.org/docs/react-component.html) and [React lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
 - Normal components render [JSX (JavaScript XML)](https://stackoverflow.com/questions/39461805/what-does-jsx-stand-for) which is then interpreted into html before rendering in the DOM
- - [Intro](https://reactjs.org/docs/introducing-jsx.html)
- - [In depth](https://reactjs.org/docs/jsx-in-depth.html)
+  - [Intro](https://reactjs.org/docs/introducing-jsx.html)
+  - [In depth](https://reactjs.org/docs/jsx-in-depth.html)
 - [virtual DOM](https://stackoverflow.com/questions/21965738/what-is-virtual-dom) to accelerate the rendering process in the DOM
  - Tries to render minimal required html when we need to modify the DOM, meaning we will only be traversing the DOM once, unlike jquery...

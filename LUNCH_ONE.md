@@ -34,9 +34,6 @@
   - link executables to global cli commands
   - `yarn add eslint -D`
 
-
-
-
 ## Development tools
 
 ### git
@@ -49,8 +46,6 @@
 - There a lot of [webpack plugins](https://webpack.js.org/plugins/) that can be used to enhance the bundling process. These can easily be written by us as well if needs be.
 - For quickly generating a webpack config(limited) - https://webpack.jakoblind.no/
 - [Webpack web server](https://github.com/webpack/webpack-dev-server) - for generating a quick development server which will watch for changes and re-run the webpack build process on every changes
-
-
 
 ### Transpilling
 - [Babel](https://babeljs.io/) - can be use alone or directly with the bundler (webpack) to convert the javascript we write with the latest and greatest syntaxes(es6, es7, react/jsx) to a
