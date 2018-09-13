@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { hot } from 'react-hot-loader';
+import FamousPeople from './FamousPeople';
 
 class App extends React.Component {
   render() {
@@ -11,6 +12,8 @@ hello,
         {name}
         {' '}
 the shrimper
+          {' '}
+          <FamousPeople ismael="TITSMASHEElll"/>
       </div>
     );
   }
