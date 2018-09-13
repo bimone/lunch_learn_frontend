@@ -1,6 +1,6 @@
 #Lunch Two
 
-### ES6 syntax
+## ES6 syntax
 - [import/export](http://es6-features.org/#ValueExportImport)
     - Search in node modules first to resolve packages
     - **Watch out** import/export in nodejs code is done differently unfortunately
@@ -8,7 +8,7 @@
 - [Class definition](http://es6-features.org/#ClassDefinition)
 - [Class inheritance](http://es6-features.org/#ClassInheritance)
 
-### React
+## React
 - [Component vs PureComponent vs stateless functions](https://stackoverflow.com/questions/40703675/react-functional-stateless-component-purecomponent-component-what-are-the-dif)
 - [state](https://reactjs.org/docs/state-and-lifecycle.html) vs [props](https://reactjs.org/docs/components-and-props.html)
     - https://github.com/uberVU/react-guide/blob/master/props-vs-state.md
