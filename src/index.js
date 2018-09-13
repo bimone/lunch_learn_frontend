@@ -5,15 +5,9 @@ import FamousPeople from './FamousPeople';
 
 class App extends React.Component {
   render() {
-    const { name } = this.props;
     return (
       <div>
-hello,
-        {name}
-        {' '}
-the shrimper
-          {' '}
-          <FamousPeople ismael="TITSMASHEElll"/>
+        <FamousPeople ismael="ISMASHEELLL" />
       </div>
     );
   }
@@ -22,4 +16,4 @@ the shrimper
 const AppWithHot = hot(module)(App);
 
 const mountNode = window.document.getElementById('app');
-ReactDOM.render(<AppWithHot name="Lt.Dan" />, mountNode);
+ReactDOM.render(<AppWithHot />, mountNode);
