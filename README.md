@@ -1,1 +1,1 @@
-## [Lunch and learn one references](https://github.com/bimone/LUNCH_ONE.md) - nodejs, npm, yarn, package.json, gitignore, eslint, airbnb code style, babel, webpack
+## [Lunch and learn one references](https://github.com/bimone/lunch_learn_frontend/blob/master/LUNCH_ONE.md) - nodejs, npm, yarn, package.json, gitignore, eslint, airbnb code style, babel, webpack
