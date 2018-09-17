@@ -6,6 +6,9 @@
 **Install dependencies from the root of the project:** </br>
 `yarn install` or `npm install`
 
+**Start development server at port 8080** </br>
+`yarn start` or `npm run start`
+
 ### Documentation
 - [All references](https://github.com/bimone/lunch_learn_frontend/blob/master/COMBINED.md)
 - [Lunch and learn one](https://github.com/bimone/lunch_learn_frontend/blob/master/LUNCH_ONE.md)

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const FAMOUS_PEOPLE = [
   { name: 'GIJoe', queryUrl: 'gi+joe' },
@@ -14,19 +15,46 @@ const FAMOUS_PEOPLE = [
 
 const BASE_LMGTFY_URL = 'http://lmgtfy.com/?q=';
 
-
 class FamousPeople extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       query: '',
     };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
+  handleChange(e) {
+    this.setState({
+      query: e.target.value,
+    });
+  }
 
   render() {
-    return <div>{this.props.ismael}</div>;
+    const { query } = this.state;
+    const { list } = this.props;
+    return (
+      <div>
+        <input
+          type="text"
+          value={query}
+          onChange={this.handleChange}
+          placeholder="Text here!"
+        />
+        <ul>
+          <li>{list[0].name}</li>
+        </ul>
+      </div>
+    );
   }
 }
 
+FamousPeople.propTypes = {
+  list: PropTypes.array,
+};
+
+FamousPeople.defaultProps = {
+  list: FAMOUS_PEOPLE,
+};
 export default FamousPeople;
