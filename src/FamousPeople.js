@@ -15,6 +15,8 @@ const FAMOUS_PEOPLE = [
 
 const BASE_LMGTFY_URL = 'http://lmgtfy.com/?q=';
 
+const constructUrl = person => `${BASE_LMGTFY_URL}${person.queryUrl}`;
+
 class FamousPeople extends React.Component {
   constructor(props) {
     super(props);
@@ -31,19 +33,35 @@ class FamousPeople extends React.Component {
     });
   }
 
+  static renderFamousPeople(famousPeople) {
+    return famousPeople.map(x => (
+      <li key={x.name}>
+        <a href={constructUrl(x)}>{x.name}</a>
+      </li>
+    ));
+  }
+
   render() {
-    const { query } = this.state;
     const { list } = this.props;
+    const { query } = this.state;
+
+    let famousPeople = list;
+    const currentQuery = query.trim().toLowerCase();
+
+    if (currentQuery.length > 0) {
+      famousPeople = famousPeople.filter(x => x.name.toLowerCase().match(currentQuery));
+    }
+
     return (
-      <div>
+      <div className="container">
         <input
           type="text"
           value={query}
           onChange={this.handleChange}
           placeholder="Text here!"
         />
-        <ul>
-          <li>{list[0].name}</li>
+        <ul className="list-container">
+          {FamousPeople.renderFamousPeople(famousPeople)}
         </ul>
       </div>
     );
@@ -51,7 +69,7 @@ class FamousPeople extends React.Component {
 }
 
 FamousPeople.propTypes = {
-  list: PropTypes.array,
+  list: PropTypes.arrayOf(PropTypes.object),
 };
 
 FamousPeople.defaultProps = {

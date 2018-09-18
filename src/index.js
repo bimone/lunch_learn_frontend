@@ -2,14 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { hot } from 'react-hot-loader';
 import FamousPeople from './FamousPeople';
+import './styles.scss';
 
 class App extends React.Component {
   render() {
-    return (
-      <div>
-        <FamousPeople />
-      </div>
-    );
+    return <FamousPeople />;
   }
 }
 

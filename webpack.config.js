@@ -65,6 +65,7 @@ const config = {
     devServer: {
         contentBase: './dist',
     },
+    devtool: 'eval-source-map', 
     plugins: [
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
     ],
