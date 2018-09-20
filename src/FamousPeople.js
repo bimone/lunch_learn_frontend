@@ -1,5 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  background-color: ${props => (props.backgroundColor ? props.backgroundColor : 'transparent')}
+`;
 
 const FAMOUS_PEOPLE = [
   { name: 'GIJoe', queryUrl: 'gi+joe' },
@@ -53,7 +58,7 @@ class FamousPeople extends React.Component {
     }
 
     return (
-      <div className="container">
+      <Container className="container" backgroundColor="white">
         <input
           type="text"
           value={query}
@@ -63,7 +68,7 @@ class FamousPeople extends React.Component {
         <ul className="list-container">
           {FamousPeople.renderFamousPeople(famousPeople)}
         </ul>
-      </div>
+      </Container>
     );
   }
 }
