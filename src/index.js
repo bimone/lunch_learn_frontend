@@ -1,12 +1,15 @@
+import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import { hot } from 'react-hot-loader';
 import FamousPeople from './FamousPeople';
 import './styles.scss';
 
 class App extends React.Component {
   render() {
-    return <FamousPeople />;
+    return <Provider store={store}><FamousPeople /></Provider>;
   }
 }
 

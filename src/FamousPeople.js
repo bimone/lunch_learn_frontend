@@ -58,7 +58,7 @@ class FamousPeople extends React.Component {
     }
 
     return (
-      <Container className="container" backgroundColor="white">
+      <Container className="container">
         <input
           type="text"
           value={query}
