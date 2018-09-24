@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { getFamousPeopleError, getFamousPeopleList, getFamousPeopleLoading } from './redux/selectors';
+import * as actions from './redux/actions';
 
 const Container = styled.div`
   background-color: ${props => (props.backgroundColor ? props.backgroundColor : 'transparent')}
@@ -46,7 +49,17 @@ class FamousPeople extends React.Component {
     ));
   }
 
+  renderOnCondition(list) {
+    const { loading } = this.props;
+    if (loading) {
+      return <div>THIS IS LOADING!</div>;
+    }
+
+    return FamousPeople.renderFamousPeople(list);
+  }
+
   render() {
+    debugger;
     const { list } = this.props;
     const { query } = this.state;
 
@@ -66,7 +79,7 @@ class FamousPeople extends React.Component {
           placeholder="Text here!"
         />
         <ul className="list-container">
-          {FamousPeople.renderFamousPeople(famousPeople)}
+          {this.renderOnCondition(famousPeople)}
         </ul>
       </Container>
     );
@@ -74,10 +87,17 @@ class FamousPeople extends React.Component {
 }
 
 FamousPeople.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.object),
+  list: PropTypes.arrayOf(PropTypes.object).isRequired,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired,
+  fetchFamousPeople: PropTypes.func.isRequired,
 };
 
-FamousPeople.defaultProps = {
-  list: FAMOUS_PEOPLE,
-};
-export default FamousPeople;
+const mapStateToProps = state => ({
+  list: getFamousPeopleList(state),
+  loading: getFamousPeopleLoading(state),
+  error: getFamousPeopleError(state),
+});
+
+
+export default connect(mapStateToProps, { ...actions })(FamousPeople);
