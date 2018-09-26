@@ -23,6 +23,14 @@ export default (state = inititalState, action) => {
         famousPeople: [...data],
       };
     }
+    case actionsTypes.FETCH_MORE_FAMOUS_PEOPLE_SUCCESS: {
+      const { data } = action.payload;
+      debugger;
+      return {
+        ...state,
+        famousPeople: [...data, ...state.famousPeople],
+      };
+    }
     default:
       return state;
   }

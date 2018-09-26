@@ -9,18 +9,6 @@ const Container = styled.div`
   background-color: ${props => (props.backgroundColor ? props.backgroundColor : 'transparent')}
 `;
 
-const FAMOUS_PEOPLE = [
-  { name: 'GIJoe', queryUrl: 'gi+joe' },
-  { name: 'Lt.Dan', queryUrl: 'lt+dan' },
-  { name: 'Degommeuse', queryUrl: 'degommeuse' },
-  { name: 'TitSmashell', queryUrl: 'TitSmashell' },
-  { name: 'TiTanium', queryUrl: 'TiTanium' },
-  { name: 'Bob Gratton', queryUrl: 'Bob+Gratton' },
-  { name: 'Guy Fiery', queryUrl: 'Guy+Fiery' },
-  { name: 'Guy Lafleur', queryUrl: 'Guy+Lafleur' },
-  { name: 'Alain', queryUrl: 'Alain' },
-];
-
 const BASE_LMGTFY_URL = 'http://lmgtfy.com/?q=';
 
 const constructUrl = person => `${BASE_LMGTFY_URL}${person.queryUrl}`;
@@ -64,7 +52,7 @@ class FamousPeople extends React.Component {
   }
 
   render() {
-    const { list } = this.props;
+    const { list, fetchMoreFamousPeople } = this.props;
     const { query } = this.state;
 
     let famousPeople = list;
@@ -82,6 +70,9 @@ class FamousPeople extends React.Component {
           onChange={this.handleChange}
           placeholder="Text here!"
         />
+        <button style={{ float: 'right' }} onClick={fetchMoreFamousPeople} className="btn striped-shadow white">
+          <span>MORE PEOPLE!</span>
+        </button>
         <ul className="list-container">
           {this.renderOnCondition(famousPeople)}
         </ul>
@@ -94,6 +85,7 @@ FamousPeople.propTypes = {
   list: PropTypes.arrayOf(PropTypes.object).isRequired,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.bool.isRequired,
+  fetchMoreFamousPeople: PropTypes.func.isRequired,
   fetchFamousPeople: PropTypes.func.isRequired,
 };
 
