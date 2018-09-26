@@ -10,6 +10,12 @@ const inititalState = {
 export default (state = inititalState, action) => {
   switch (action.type) {
     case actionsTypes.FETCH_FAMOUS_PEOPLE: {
+      return {
+        ...state,
+        loading: true,
+      };
+    }
+    case actionsTypes.FETCH_FAMOUS_PEOPLE_SUCCESS: {
       const { data } = action.payload;
       return {
         ...state,

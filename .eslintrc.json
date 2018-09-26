@@ -1,5 +1,6 @@
 {
     "extends": "airbnb",
+    "plugins": ["redux-saga"],
     "rules": {
         "linebreak-style": 0,
         "react/jsx-filename-extension": [

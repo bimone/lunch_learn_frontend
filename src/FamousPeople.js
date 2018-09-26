@@ -35,6 +35,11 @@ class FamousPeople extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+    const { fetchFamousPeople } = this.props;
+    fetchFamousPeople();
+  }
+
   handleChange(e) {
     this.setState({
       query: e.target.value,
@@ -59,7 +64,6 @@ class FamousPeople extends React.Component {
   }
 
   render() {
-    debugger;
     const { list } = this.props;
     const { query } = this.state;
 
